@@ -59,4 +59,4 @@ else
     code
 fi
 
-# exit 视情况选择
+exit

@@ -37,4 +37,4 @@ do {
     }
 } while ($true)
 
-# exit 视情况选择
+exit
