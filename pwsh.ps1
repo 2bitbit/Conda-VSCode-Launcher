@@ -6,7 +6,7 @@ Write-Host "说明：为了让 VSCode 插件能正确使用 Conda 环境变量�
 Write-Host "      请激活环境后，再从本终端中启动 VS Code。" -ForegroundColor Green
 Write-Host ""
 Write-Host "当前可用的 Conda 环境：" -ForegroundColor Magenta
-conda env list
+Get-Content "C:\Users\Xie bro\.conda\environments.txt"
 Write-Host ""
 
 do {

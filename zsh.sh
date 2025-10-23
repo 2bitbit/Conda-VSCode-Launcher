@@ -9,7 +9,12 @@ echo "${GREEN}说明：为了让 VSCode 插件能正确使用 Conda 环境变量
 echo "      请激活环境后，再从本终端中启动 VS Code。"
 echo ""
 echo "当前可用的 Conda 环境："
-conda env list
+# 过滤和输出
+#    -v : 反向匹配 (只保留不匹配的行)
+#    -x : 精确匹配 (必须匹配整行，防止 "apple" 被 "a" 过滤)
+#    -F : 按固定字符串匹配 (非正则表达式)
+#    -e "pattern" : 指定要过滤的模式
+ls "/home/finnwsl/miniconda3/envs" | grep -v -x -F -e "..." -e "etc"
 echo ""
 echo -n "${NC}请输入你想要在哪个 Conda 环境打开 VSCode (为空则不激活 Conda, 采用原生环境): "
 read name
