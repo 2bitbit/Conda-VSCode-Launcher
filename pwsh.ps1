@@ -17,14 +17,14 @@ do {
     }
     elseif ($name -eq "") {
         code
-        break
+        exit 0
     }
     else {
         # 尝试激活 Conda 环境
         conda activate $name
         if ($LASTEXITCODE -eq 0) { # 成功激活 Conda 环境
             code
-            break
+            exit 0
         }
         else {
             Write-Host "激活 Conda 环境失败: $name" -ForegroundColor RED
@@ -36,5 +36,3 @@ do {
         }
     }
 } while ($true)
-
-exit
